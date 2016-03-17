@@ -32,8 +32,17 @@
     [self.text2 resignFirstResponder];
 }
 - (IBAction)onCalculateTap:(UIButton *)sender {
-    
-    
+    self.operationLabel.text = sender.currentTitle;
+    NSString *operation = self.operationLabel.text;
+    if ([operation isEqualToString:@"+"]) {
+        
+    } else if ([operation isEqualToString:@"-"]) {
+        
+    } else if ([operation isEqualToString:@"x"]) {
+        
+    } else {
+        
+    }
 }
 
 @end
