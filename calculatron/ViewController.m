@@ -9,8 +9,8 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *text1;
-@property (weak, nonatomic) IBOutlet UITextField *text2;
+@property (weak, nonatomic) IBOutlet UITextField *operand1;
+@property (weak, nonatomic) IBOutlet UITextField *operand2;
 @property (weak, nonatomic) IBOutlet UILabel *operandLabel;
 @property (weak, nonatomic) IBOutlet UILabel *answerLabel;
 
@@ -28,12 +28,14 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)dismissKeyboard:(id)sender {
-    [self.text1 resignFirstResponder];
-    [self.text2 resignFirstResponder];
+    [self.operand1 resignFirstResponder];
+    [self.operand2 resignFirstResponder];
 }
 - (IBAction)onCalculateTap:(UIButton *)sender {
-    self.operationLabel.text = sender.currentTitle;
-    NSString *operation = self.operationLabel.text;
+    double op1 = self.operand1.text.doubleValue;
+    double op2 = self.operand2.text.doubleValue;
+self.operandLabel.text = sender.currentTitle;
+    NSString *operation = self.operandLabel.text;
     if ([operation isEqualToString:@"+"]) {
         
     } else if ([operation isEqualToString:@"-"]) {
